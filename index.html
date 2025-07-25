@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="player">
+    <h2>Music Player</h2>
+
+    <div class="album-art">
+      <img id="cover" src="images/default.jpg" alt="Album Art" />
+    </div>
+
+    <div class="details">
+      <h3 id="title">Title</h3>
+      <p id="artist">Artist</p>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <div class="controls">
+      <button onclick="toggleShuffle()">🔀</button>
+      <button onclick="prevSong()">⏮️</button>
+      <button onclick="togglePlay()" id="playBtn">▶️</button>
+      <button onclick="nextSong()">⏭️</button>
+      <button onclick="toggleRepeat()">🔁</button>
+    </div>
+
+    <input type="range" id="progress" value="0" />
+    <div class="time">
+      <span id="current">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+
+    <label>Volume:
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </label>
+
+    <div class="playlist">
+      <h4>Playlist</h4>
+      <ul id="playlist"></ul>
+    </div>
+
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
